@@ -1,4 +1,4 @@
-
+import numpy as np
 import csv
 import plotter
 
@@ -15,7 +15,8 @@ def main():
                     return True
                 else:
                     return False
- def bye(quits):
+
+def bye(quits):
             user = input(">>")
             string = user.split()
             cmd = string[0]
@@ -48,9 +49,9 @@ def main():
             else:
                 print('invalid command')
 
-def student_average(stu_string, plot):
+def student_average(stu_string, plot, userfile):
   # calculates and plots
-    stu_string = ["stf",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"] as userfile:
+    stu_string = ["stf",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"]
     csv_reader = csv.reader(userfile)
     firstname = stu_string[2]
     lastname= stu_string[3]
@@ -72,13 +73,14 @@ def student_average(stu_string, plot):
                 print('Plot faild. (student not found)')
                 break
 
-                except:
-             print('name not found in csv file')
+        #try:
 
-           except:
+             #print('name not found in csv file')
+
+   # try:
 
 
-      print('file not found')
+      #print('file not found')
 
 
 
@@ -96,35 +98,21 @@ def print_average(avg,):
         average = Sum / 12
         print(average)
 
-def class_average(class_string, data_points, dot_color, trace_plot):
-    # plots multiple averages
-    class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
+def class_average():
+    readdata = csv.reader(open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"))
+    data = []
 
-    with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
-        csv_reader = csv.reader(namefile)
-        firstname = class_string[1]
-        lastname = class_string[2]
-        row = []
-        for row in csv_reader:
-            while firstname in row:
-                if lastname in row:
-                    print(row)
-                    plotter.init("my graph", "X-axis", "Y-axis")
+    for row in readdata:
+        data.append(row)
 
-        if len(class_string) !=2:
-            print("Usage: cavg <filename>")
+    data.pop(0)
 
-            try:
-                if(class_string == True):
-                    print("Plot is finished (window may be hidden).")
+    q1= []
 
-                if (class_string[0] == False):
-                    print("Usage: cavg <filename>")
-                if (class_string[1]) == False):
-                    print("No such file: foo.csv")
+    for i in range(len(data)):
+        q1.append(int(data[i]["my graph", "X-axis", "Y-axis"]))
 
-            except:
-                return
+    print ('Mean of my graph, X-axis, Y-axis :   ;(np.mean(q1))')
 
 def help():
      # function to guide the user
