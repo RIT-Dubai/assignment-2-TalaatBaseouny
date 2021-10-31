@@ -96,6 +96,35 @@ def print_average(avg,):
         average = Sum / 12
         print(average)
 
+def class_average(class_string, data_points, dot_color, trace_plot):
+
+    class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
+
+    with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
+        csv_reader = csv.reader(namefile)
+        firstname = class_string[1]
+        lastname = class_string[2]
+        row = []
+        for row in csv_reader:
+            while firstname in row:
+                if lastname in row:
+                    print(row)
+                    plotter.init("my graph", "X-axis", "Y-axis")
+
+        if len(class_string) !=2:
+            print("Usage: cavg <filename>")
+
+            try:
+                if(class_string == True):
+                    print("Plot is finished (window may be hidden).")
+
+                if (class_string[0] == False):
+                    print("Usage: cavg <filename>")
+                if (class_string[1]) == False):
+                    print("No such file: foo.csv")
+
+            except:
+                return
 
 
 # Press the green button in the gutter to run the script.
