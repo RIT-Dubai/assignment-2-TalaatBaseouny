@@ -16,7 +16,7 @@ def main():
                     return True
                 else:
                     return False
-        def bye():
+ def bye():
             user = input(">>")
             string = user.split()
             cmd = string[0]
@@ -28,7 +28,26 @@ def main():
                         if len(string) != 4:
                             print('incorrect usage, "Usage: stu <filename> <last name> <first name>"')
                         else:
+                            userfile = string[1]
+                            first_name= string[3]
+                            last_name= string[2]
+                            param = ["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", "Elsawi", "Talaat"]
+                            student_average(["stu", userfile, last_name,first_name])
 
+                    except:
+                        if user == "":
+                            user = input("enter a command or 'quit' to quit")
+                            quits()
+            elif cmd == 'avg':
+                    if len(string) != 3:
+                        print('incorrect usage: avg <filename> <grade item>')
+                    else:
+                        userfile = string[1]
+                        gradeitem = string[2]
+                        print_average(["avg",userfile,gradeitem])
+
+            else:
+                print('invalid command')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
