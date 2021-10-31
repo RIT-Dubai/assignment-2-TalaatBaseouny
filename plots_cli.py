@@ -49,7 +49,7 @@ def main():
             else:
                 print('invalid command')
 
-def student_average(stu_string):
+def student_average(stu_string, plot):
 
     stu_string = ["stf",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"] as userfile:
     csv_reader = csv.reader(userfile)
@@ -61,7 +61,26 @@ def student_average(stu_string):
             if lastname in row:
                 print(row)
                 plotter.init("my graph", "X-axis", "Y-axis")
+                plotter.new_series()
+                for i in range(len(plot)):
+                    plotter.add_data_point(plot[i])
+                    plotter.plot()
+                    plotter.plot()
+                if plotter.plot() == True:
+                    print('Plotting complete. (window may be hidden)')
                 break
+            elif plotter.plot() == False:
+                print('Plot faild. (student not found)')
+                break
+
+                except:
+             print('name not found in csv file')
+
+           except:
+
+
+      print('file not found')
+
 
 
 
@@ -70,6 +89,6 @@ def student_average(stu_string):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-     ('PyCharm')
+     main()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
