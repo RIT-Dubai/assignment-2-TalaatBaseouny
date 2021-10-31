@@ -16,7 +16,7 @@ def main():
                     return True
                 else:
                     return False
- def bye():
+ def bye(quits):
             user = input(">>")
             string = user.split()
             cmd = string[0]
@@ -83,7 +83,18 @@ def student_average(stu_string, plot):
 
 
 
-
+def print_average(avg,):
+    csv=avg[1]
+    f = open(csv)
+    average=0
+    Sum = 0
+    column = 12
+    for i in range(0,column):
+        for n in range(i):
+            n=float(n)
+            Sum += n
+        average = Sum / 12
+        print(average)
 
 
 
