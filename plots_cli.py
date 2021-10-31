@@ -49,6 +49,25 @@ def main():
             else:
                 print('invalid command')
 
+def student_average(stu_string):
+
+    stu_string = ["stf",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"] as userfile:
+    csv_reader = csv.reader(userfile)
+    firstname = stu_string[2]
+    lastname= stu_string[3]
+    row = []
+    for row in csv_reader:
+        while firstname in row:
+            if lastname in row:
+                print(row)
+                plotter.init("my graph", "X-axis", "Y-axis")
+                break
+
+
+
+
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
      ('PyCharm')
