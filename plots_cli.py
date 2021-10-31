@@ -1,10 +1,9 @@
-import numpy as np
+
 import csv
 import plotter
 
 
 def main():
-
               #quit function
         def quits():
                 sure = input("are you sure?")
@@ -50,7 +49,7 @@ def main():
                 print('invalid command')
 
 def student_average(stu_string, plot):
-
+  # calculates and plots
     stu_string = ["stf",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"] as userfile:
     csv_reader = csv.reader(userfile)
     firstname = stu_string[2]
@@ -84,6 +83,7 @@ def student_average(stu_string, plot):
 
 
 def print_average(avg,):
+     # prints the average
     csv=avg[1]
     f = open(csv)
     average=0
@@ -97,7 +97,7 @@ def print_average(avg,):
         print(average)
 
 def class_average(class_string, data_points, dot_color, trace_plot):
-
+    # plots multiple averages
     class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
 
     with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
@@ -126,6 +126,13 @@ def class_average(class_string, data_points, dot_color, trace_plot):
             except:
                 return
 
+def help():
+     # function to guide the user
+    print("stu <filename> <first name> <last name> - plot student grades")
+    print("cavg <filename> - plot class average")
+    print("avg <filename> <number> - prints the average for the grade item")
+    print("quit - quits")
+    print("help - displays this message")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
