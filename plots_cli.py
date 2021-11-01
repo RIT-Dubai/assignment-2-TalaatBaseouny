@@ -10,14 +10,14 @@ def main():
 
 
     if (z[0] == "stu"):
-        student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", "Elsawi", "Talaat" , plotter.plot(trace_plot=True)])
+        student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", "Elsawi", "Talaat" , students_average_plotting()])
 
     if (command == "avg"):
         print_average(["avg",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", 100])
 
 
     if (command == "cavg"):
-          class_average()
+          class_average(["cavg", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"])
 
 
     if (command == "help"):
@@ -122,21 +122,23 @@ def print_average(avg,):
         average = Sum / 12
         print(average)
 
-def class_average():
-    readdata = csv.reader(open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv"))
-    data = []
+def class_average(args):
+    filename = args[1]
+    try:
+        with open(filename, 'r') as f:
+            csv_reader = csv.reader(f)
+            next(csv_reader)
+            plotter.init("Class averrage", "Grade item", "Grade")
+            for i in range(1, 11):
+                plotter.add_data_point(round(print_average(["avg", "points.csv", i])[0], 2))
+                plotter.plot()
+                return True
+    except FileNotFoundError:
+        print(f'[ERROR] No such file: {filename}')
+        return -1
+    except:
+        return -1
 
-    for row in readdata:
-        data.append(row)
-
-    data.pop(0)
-
-    q1= []
-
-    for i in range(len(data)):
-        q1.append(int(data[i]["my graph", "X-axis", "Y-axis"]))
-
-    print ('Mean of my graph, X-axis, Y-axis :   ;(np.mean(q1))')
 
 def help():
      # function to guide the user
