@@ -116,35 +116,26 @@ def print_average(avg,):
         average = Sum / 12
         print(average)
 
-def class_average(class_string, ):
-  # plots multiple averages for multiple students
-    class_string = ["cavg", "filename", ]
-    with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
-       csv_reader = csv.reader(namefile)
-       print(csv_reader)
-       fisrtname = class_string[0]
-       lastname = class_string[0]
-    row = []
-    for row in csv_reader:
-           while fisrtname in row:
-               if lastname in row:
-                   print(row)
-                   plotter.init("my graph", "X-axis", "Y-axis")
+def class_average(cavg ):
+    f = open(cavg[1],"r")
+    next(f)
+    average = 0
+    Sum = 0
+    row_count = 0
+    for row in f:
+            for column in row.split(','):
+                        try:
+                                x = float(column)#turns number into float to allow for math
+                                Sum += x
+                                row_count += 1
 
-    if len(class_string) != 2:
-        print("Usage: cavg <filename>")
 
-        try:
-            if (class_string == True):
-                print("Plot is finished (window may be hidden).")
+                        except ValueError:#ignores elements that contains letters because they cannot be turned into float
+                            pass
+            print("Avg =",Sum/row_count)#sum divided by number of elements = average
 
-            if (class_string[0] == False):
-                print("Usage: cavg <filename>")
-            if (class_string[1] == False):
-                print("No such file: foo.csv")
 
-        except:
-            return
+
 
 
 def help():
