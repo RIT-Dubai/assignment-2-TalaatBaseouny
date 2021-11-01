@@ -10,7 +10,7 @@ def main():
 
 
     if (z[0] == "stu"):
-        student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", ()] )
+        student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", []] )
 
     if (command == "avg"):
         print_average(["avg",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", 100])
@@ -102,11 +102,10 @@ def print_average(avg,):
         average = Sum / 12
         print(average)
 
-def class_average(class_string, data_points, dot_color):
+def class_average(class_string, ):
   # plots multiple averages for multiple students
-    class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
-
-    with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
+    class_string = ["cavg", "filename", ]
+    with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
        csv_reader = csv.reader(namefile)
        print(csv_reader)
        fisrtname = class_string[1]
