@@ -20,3 +20,11 @@ def test_print_average():
     avg = sum(data) / len(data)
     assert plots_cli.print_average(args)[0] == avg
     assert plots_cli.print_average(args_fail) == -1
+
+def test_class_average():
+    "test two command inputs and their expected outputs"
+
+    args = ["cavg", "points.csv"]
+    args_fail = ["cavg", "point.cvs"]
+    assert plots_cli.class_average(args) == True
+    assert plots_cli.class_average(args_fail) == -1
