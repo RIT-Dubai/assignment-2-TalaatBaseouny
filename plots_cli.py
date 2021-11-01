@@ -13,7 +13,7 @@ def main():
         student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", []] )
 
     if (command == "avg"):
-        print_average(["avg",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", 100])
+        print_average(["avg",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", ])
 
 
     if (command == "cavg"):
@@ -87,7 +87,7 @@ def student_average(stu_string):
 # opening and reading the file
    else:
     try:
-       with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
+       with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
         csv_reader = csv.reader(namefile)
         fisrtname = stu_string[2]
         lastname = stu_string[3]
