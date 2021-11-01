@@ -1,5 +1,5 @@
-import numpy as np
 import csv
+
 import plotter
 
 
@@ -155,7 +155,20 @@ def help():
     print("quit - quits")
     print("help - displays this message")
 
-
+def students_average_plotting():
+    plotter.init("my graph", "X-axis", "Y-axis")
+    plotter.add_data_point(0.00)
+    plotter.add_data_point(82)
+    plotter.add_data_point(13.37)
+    plotter.add_data_point(28.72)
+    plotter.add_data_point(50.00)
+    plotter.add_data_point(90.65)
+    plotter.add_data_point(11.06)
+    plotter.add_data_point(34.43)
+    plotter.add_data_point(95)
+    plotter.add_data_point(75)
+    plotter.plot(trace_plot=True)
+    input("input anything to exit")
 
 
 def print_average_calculation():
