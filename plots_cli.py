@@ -89,8 +89,8 @@ def student_average(stu_string):
     try:
        with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
         csv_reader = csv.reader(namefile)
-        fisrtname = stu_string[2]
-        lastname = stu_string[3]
+        fisrtname = stu_string[3]
+        lastname = stu_string[2]
         row = []
         for row in csv_reader:
            while fisrtname in row:
@@ -122,8 +122,8 @@ def class_average(class_string, ):
     with open(r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv") as namefile:
        csv_reader = csv.reader(namefile)
        print(csv_reader)
-       fisrtname = class_string[1]
-       lastname = class_string[2]
+       fisrtname = class_string[0]
+       lastname = class_string[0]
     row = []
     for row in csv_reader:
            while fisrtname in row:
