@@ -4,8 +4,32 @@ import plotter
 
 
 def main():
+
+    command = input(">>")
+    z = command.split()
+
+
+    if (z[0] == "stu"):
+        student_average(["stu", r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", "Elsawi", "Talaat" , plotter.plot(trace_plot=True)])
+
+    if (command == "avg"):
+        print_average(["avg",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", 100])
+
+
+    if (command == "cavg"):
+          class_average()
+
+
+    if (command == "help"):
+        help()
+
+    if z[0] == str("quit"):
+        quit()
+        print("goodbye")
+
+
               #quit function
-        def quits():
+def quits():
                 sure = input("are you sure?")
                 while sure == 'y':
                     print('goodbye!')
@@ -66,10 +90,10 @@ def student_average(stu_string, plot, userfile):
                     plotter.add_data_point(plot[i])
                     plotter.plot()
                     plotter.plot()
-                if plotter.plot() == True:
+                if  plotter.plot() == True:
                     print('Plotting complete. (window may be hidden)')
                 break
-            elif plotter.plot() == False:
+            elif    plotter.plot() == False:
                 print('Plot faild. (student not found)')
                 break
 
@@ -121,6 +145,29 @@ def help():
     print("avg <filename> <number> - prints the average for the grade item")
     print("quit - quits")
     print("help - displays this message")
+
+def students_average_plotting():
+    plotter.init("my graph", "X-axis", "Y-axis")
+    plotter.add_data_point(0.00)
+    plotter.add_data_point(82)
+    plotter.add_data_point(13.37)
+    plotter.add_data_point(28.72)
+    plotter.add_data_point(50.00)
+    plotter.add_data_point(90.65)
+    plotter.add_data_point(11.06)
+    plotter.add_data_point(34.43)
+    plotter.add_data_point(95)
+    plotter.add_data_point(75)
+    plotter.plot(trace_plot=True)
+    input("input anything to exit")
+
+
+def print_average_calculation():
+    plotter.init("my graph", "x-axis","y-axis")
+    plotter.plot(trace_plot=True)
+    input("input anything to exit")
+
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
