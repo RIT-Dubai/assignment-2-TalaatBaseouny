@@ -73,20 +73,34 @@ def bye(quits):
             else:
                 print('invalid command')
 
-def student_average(csv):
-    f = open(csv,r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", )
-    average = 0
-    Sum = 0
-    row_count = 0
-    for row in f:
-        for column in row.split(','):
-            n=float(column)
-            Sum += n
-        row_count += 1
-    average = Sum / len(column)
-    f.close()
-    return 'The average is:', average
+def student_average(stu_string):
+    # calculates and plots the student average for one student only
+    # a_string = "stu, filename, firstname, lastname"
+   stu_string = ["stu",r"C:\Users\talaa\Downloads\GCIS.123.600-assignment2-sample (1).csv", "Talaat", "Elsawi"]
+   namefile = [1]
+   if len(stu_string) != 4:
+       print("Usage: stu <filename> <first name> <last name>")
 
+   if (stu_string[1] == None):
+         print("No such file: foo.csv")
+
+# opening and reading the file
+   else:
+    try:
+       with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
+        csv_reader = csv.reader(namefile)
+        fisrtname = stu_string[2]
+        lastname = stu_string[3]
+        row = []
+        for row in csv_reader:
+           while fisrtname in row:
+               if lastname in row:
+                   print(row)
+                   print("Plot finished (window may be hidden).")
+                   break
+
+    except:
+        print("Plot failed (no such student).")
 
 def print_average(avg,):
      # prints the average
